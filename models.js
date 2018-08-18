@@ -13,7 +13,6 @@ const blogPostSchema = mongoose.Schema({
   created: {type: Date, default: Date.now}
 });
 
-
 blogPostSchema.virtual('authorName').get(function() {
   return `${this.author.firstName} ${this.author.lastName}`.trim();
 });
@@ -29,5 +28,5 @@ blogPostSchema.methods.serialize = function() {
 };
 
 const BlogPost = mongoose.model('BlogPost', blogPostSchema);
-
+//const TestBlogPost = mongoose.model('TestBlogPost', blogPostSchema);
 module.exports = {BlogPost};
